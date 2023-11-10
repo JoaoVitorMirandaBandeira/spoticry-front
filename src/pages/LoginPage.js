@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { goToHomePage } from "../routes/Coordinator";
 import { ImageContainer, LoginContainer } from "./Styles/Styles";
 import { LoginForm } from "../components/LoginForm/LoginForm";
+import { useEffect } from "react";
+import { isAuthenticated } from "../utils/isAuthenticated";
 
 export const LoginPage = () => {
   const navigate = useNavigate();

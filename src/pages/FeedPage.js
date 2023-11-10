@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { getPlaylistsFromUser } from "../services/playlist";
+import { isAuthenticated } from "../utils/isAuthenticated";
+import { useNavigate } from "react-router-dom";
 
 export function FeedPage() {
   const [playlists, setPlaylists] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
+    isAuthenticated(navigate);
     fetchPlaylists();
-  }, []);
+  },[navigate]);
 
   const fetchPlaylists = async () => {
     try {
