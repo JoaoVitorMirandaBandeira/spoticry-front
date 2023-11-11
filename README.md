@@ -4,7 +4,7 @@ Uma aplicação web para gerenciar músicas e playlists utilizando a API SpotiCr
 
 ![exemplo](exemploFront.png)
 
-Link para o figma do projeto (https://www.figma.com/file/UNdT3JnM3w0tSlRu0OuatC/Spotycry?type=design&node-id=0%3A1&mode=design&t=snejh3ByktmWFVLy-1)
+Link para o figma do projeto [aqui](https://www.figma.com/file/UNdT3JnM3w0tSlRu0OuatC/Spotycry?type=design&node-id=0%3A1&mode=design&t=snejh3ByktmWFVLy-1)
 
 ## **Índice**
 
