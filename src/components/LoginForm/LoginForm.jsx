@@ -8,7 +8,7 @@ import { Loading } from '../Loading/Loading';
 import React, { useState } from 'react';
 
 export const LoginForm = () => {
-    const [form, onChange, clear] = useForm({ email: '', password: '' });
+    const [form, onChange] = useForm({ email: '', password: '' });
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
