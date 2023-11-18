@@ -3,6 +3,7 @@ import axios from "axios";
 import { getPlaylistsFromUser } from "../services/playlist";
 import { isAuthenticated } from "../utils/isAuthenticated";
 import { useNavigate } from "react-router-dom";
+import { CardPlaylist } from "../components/CardPlaylist/CardPlaylist";
 
 export function FeedPage() {
   const [playlists, setPlaylists] = useState([]);
@@ -31,6 +32,7 @@ export function FeedPage() {
             <li key={playlist._id}>{index+1} {playlist._name} </li>
           ))}
       </ul>
+      <CardPlaylist/>
     </div>
   );
 }
