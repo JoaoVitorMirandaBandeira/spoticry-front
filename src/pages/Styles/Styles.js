@@ -14,3 +14,9 @@ export const ImageContainer = styled.div`
   background-position: center;
   background-repeat: no-repeat;
 `;
+
+export const NewPlaylists = styled.div`
+    display: flex;
+    margin: auto 23px;
+    gap: 21px
+`

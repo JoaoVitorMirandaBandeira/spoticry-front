@@ -7,7 +7,7 @@ export const login = async (body, navigate) => {
   console.log(body);
   try{
     const response = await axios.post(`${BASE_URL}user/login`, body)
-    Cookies.set("token", response.data.token)
+    Cookies.set("token", response.data.token,{expires: 1/24})
     goToFeed(navigate)
   }catch(err){
     console.log(err);      

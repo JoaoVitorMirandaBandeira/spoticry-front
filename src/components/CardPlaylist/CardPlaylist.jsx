@@ -1,22 +1,20 @@
-import { ContainerPlaylist, TitlePlaylist,TextPlaylist,SubTitlePlaylist,ContainerMusicPlaylist,ButtonViewMusic } from "./Style"
+import { ContainerPlaylist, TitlePlaylist,TextPlaylist,SubTitlePlaylist,ContainerMusicPlaylist,ButtonViewMusic,MusicName} from "./Style"
+import useSong from "../../hooks/useSong"
 
-export const CardPlaylist = () => {
+export const CardPlaylist = (props) => {
+    const [songs,loading,erro] = useSong(props.songs);
     return (
         <>
             <ContainerPlaylist>
-                <TitlePlaylist>So as Brabas</TitlePlaylist>
-                <TextPlaylist>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</TextPlaylist>
+                <TitlePlaylist>{props.name}</TitlePlaylist>
+                <TextPlaylist>{props.description}</TextPlaylist>
                 <SubTitlePlaylist>Musicas:</SubTitlePlaylist>
                 <ContainerMusicPlaylist>
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <p>Lorem ipsum dolor sit amet</p>
+                    {Array.isArray(songs) &&
+                        songs.map(element => {
+                            return <MusicName><abbr title={element.title}>{element.title}</abbr></MusicName>
+                        })
+                    }
                 </ContainerMusicPlaylist>
                 <ButtonViewMusic>Ver Músicas</ButtonViewMusic>
             </ContainerPlaylist>

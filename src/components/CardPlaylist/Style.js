@@ -73,3 +73,13 @@ export const ButtonViewMusic = styled.button`
     font-weight: 600;
     border: none;
 `
+
+export const MusicName = styled.p`
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-style: italic;
+    width: 210px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+`
