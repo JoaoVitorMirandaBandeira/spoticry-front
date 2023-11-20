@@ -1,5 +1,6 @@
-import { ContainerPlaylist, TitlePlaylist,TextPlaylist,SubTitlePlaylist,ContainerMusicPlaylist,ButtonViewMusic,MusicName} from "./Style"
+import { ContainerPlaylist, TitlePlaylist,TextPlaylist,SubTitlePlaylist,ContainerMusicPlaylist,MusicName} from "./Style"
 import useSong from "../../hooks/useSong"
+import { ButtonCard } from "../../styles/Styles";
 
 export const CardPlaylist = (props) => {
     const [songs,loading,erro] = useSong(props.songs);
@@ -11,12 +12,12 @@ export const CardPlaylist = (props) => {
                 <SubTitlePlaylist>Musicas:</SubTitlePlaylist>
                 <ContainerMusicPlaylist>
                     {Array.isArray(songs) &&
-                        songs.map(element => {
-                            return <MusicName><abbr title={element.title}>{element.title}</abbr></MusicName>
+                        songs.map((element) => {
+                            return <MusicName key={element.id}><abbr title={element.title}>{element.title}</abbr></MusicName>
                         })
                     }
                 </ContainerMusicPlaylist>
-                <ButtonViewMusic>Ver Músicas</ButtonViewMusic>
+                <ButtonCard>Ver Músicas</ButtonCard>
             </ContainerPlaylist>
         </>
     )

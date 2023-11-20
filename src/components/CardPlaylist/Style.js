@@ -62,18 +62,6 @@ export const ContainerMusicPlaylist = styled.div`
 
 `
 
-export const ButtonViewMusic = styled.button`
-    width: 150px;
-    height: 30px;
-    flex-shrink: 0;
-    border-radius: 16px;
-    background: #F5E131;
-    font-size: 16px;
-    font-style: italic;
-    font-weight: 600;
-    border: none;
-`
-
 export const MusicName = styled.p`
     font-size: 0.9rem;
     font-weight: 300;

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { getPlaylistsFromUser } from '../services/playlist';
 import { isAuthenticated } from '../utils/isAuthenticated';
 import { useNavigate } from 'react-router-dom';
 import { CardPlaylist } from '../components/CardPlaylist/CardPlaylist';
 import { NewPlaylists } from './Styles/Styles';
+import { Header } from '../components/Header/Header';
+import CardMusic from '../components/CardMusic/CardMusic';
 
 export function FeedPage() {
     const [playlists, setPlaylists] = useState([]);
@@ -13,6 +14,7 @@ export function FeedPage() {
     useEffect(() => {
         isAuthenticated(navigate);
         fetchPlaylists();
+        //TODO Criar o service para bucar as musicas
     }, [navigate]);
 
     const fetchPlaylists = async () => {
@@ -23,22 +25,28 @@ export function FeedPage() {
             console.error('Erro ao buscar playlists:', error);
         }
     };
-
+    //TODO criar os carroseis com as msicas e as playlists
     return (
-        <div>
-            <h1>My Playlist</h1>
-            <NewPlaylists>
-                {Array.isArray(playlists) &&
-                    playlists.map((playlist, index) => (
-                        <CardPlaylist
-                            name={playlist._name}
-                            description={playlist._description}
-                            songs={playlist._songs}
-                        />
-                    ))}
-            </NewPlaylists>
-        </div>
+        <>
+            <Header />
+            <div>
+                <h1>Playlist</h1>
+                <NewPlaylists>
+                    {Array.isArray(playlists) &&
+                        playlists.map((playlist, index) => (
+                            <CardPlaylist
+                                key={playlist._id}
+                                name={playlist._name}
+                                description={playlist._description}
+                                songs={playlist._songs}
+                            />
+                        ))}
+                </NewPlaylists>
+                <CardMusic/>
+            </div>
+        </>
     );
+    //TODO acrescentar o footer a aplicação
 }
 
 export default FeedPage;
