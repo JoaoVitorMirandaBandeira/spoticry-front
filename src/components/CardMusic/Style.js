@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MusicContainer = styled.div`
     width:250px;
     height:290px;
-    background-color: #454545 ;
+    background-color: #FFF ;
     border-radius: 10px;
     display:flex;
     flex-direction: column;
@@ -19,7 +19,7 @@ export const Thumbnail = styled.img`
 `
 
 export const MusicName= styled.h3`
-    color: #FFFFFF;
+    color: #454545;
     font-weight:600;
     font-style: normal;
     text-align:center;
@@ -28,7 +28,7 @@ export const MusicName= styled.h3`
 `
 
 export const MusicArtist= styled.p`
-    color: #FFF;
+    color: #454545;
     text-align: center;
     font-size: 0.9rem;
     font-style: italic;

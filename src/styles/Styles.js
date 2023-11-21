@@ -21,6 +21,16 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
+
+    &::-webkit-scrollbar {
+        width:5px;
+        background-color:transparent;        
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: gray; /* Cor do thumb (a parte móvel do scrollbar) */
+        border-radius: 5px; /* Borda arredondada do thumb */
+    }
   }
 `;
 
@@ -29,12 +39,12 @@ export const ButtonCard = styled.button`
     height: 30px;
     flex-shrink: 0;
     border-radius: 16px;
-    background: #F5E131;
+    background: #f5e131;
     font-size: 16px;
     font-style: italic;
     font-weight: 600;
     border: none;
     padding: 0 25px;
-`
+`;
 
 export default GlobalStyle;
