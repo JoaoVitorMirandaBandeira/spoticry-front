@@ -23,6 +23,7 @@ export const TitlePlaylist = styled.h3`
     color: ${colors.white};
     font-size: 1.5rem;
     font-weight: 600;
+    text-align:center;
 `
 
 export const TextPlaylist = styled.p`

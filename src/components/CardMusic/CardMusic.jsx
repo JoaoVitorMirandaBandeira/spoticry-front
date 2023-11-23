@@ -13,7 +13,6 @@ const CardMusic = (props) => {
         getIdThumbnail()
     },[])
     
-    //TODO => criar o card sem a dependencia da api por enquanto
     return(
         <MusicContainer>
             <Thumbnail src={`https://img.youtube.com/vi/${idThumbnail}/mqdefault.jpg`} alt="Thumbnail do video"/>

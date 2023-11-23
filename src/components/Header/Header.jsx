@@ -21,7 +21,7 @@ export const Header = () => {
             setAuthenticated(false);
         }
     },[]);
-    //TODO => Criar o redirecionamento para as paginas corretas 
+
     return (
         <HeaderContainer>
             <HeaderLogo src={logo} alt="logo" />

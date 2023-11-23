@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getPlaylistsFromUser } from '../services/playlist';
+import { getAllPlaylists } from '../services/playlist';
 import { isAuthenticated } from '../utils/isAuthenticated';
 import { useNavigate } from 'react-router-dom';
 import { CardPlaylist } from '../components/CardPlaylist/CardPlaylist';
@@ -19,8 +19,6 @@ export function FeedPage() {
     useEffect(() => {
         isAuthenticated(navigate);
         fetchData();
-        console.log(loading);
-        //TODO Criar o service para bucar as musicas
     }, [navigate]);
 
     const fetchData = async () => {
@@ -32,7 +30,7 @@ export function FeedPage() {
 
     const fetchPlaylists = async () => {
         try {
-            const response = await getPlaylistsFromUser();
+            const response = await getAllPlaylists();
             setPlaylists(response.data.playlists);
         } catch (error) {
             console.error('Erro ao buscar playlists:', error);
@@ -46,7 +44,7 @@ export function FeedPage() {
             console.error('Erro ao buscar playlists:', error);
         }
     };
-    //TODO criar os carroseis com as msicas e as playlists
+
     return (
         <>
             {loading && <Loading />}
@@ -87,7 +85,6 @@ export function FeedPage() {
             </>
         </>
     );
-    //TODO acrescentar o footer a aplicação
 }
 
 export default FeedPage;

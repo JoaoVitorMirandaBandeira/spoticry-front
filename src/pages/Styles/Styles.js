@@ -39,6 +39,7 @@ export const Container = styled.div`
     display:flex;
     flex-direction:column;
     justify-content:space-around;
+    width:100%;
 `
 export const Title = styled.h1`
     font-size: 2rem;
