@@ -18,7 +18,7 @@ export const getAllPlaylists = () => {
 export const getPlaylistsFromUser = () => {
     const token =  Cookies.get("token")
     const userId = Cookies.get('userId')
-    return axios.get(`${BASE_URL}user/${userId}/playlists`,{
+    return axios.get(`${BASE_URL}playlist/user/${userId}/playlists`,{
         headers:{
             Authorization: token
         }
