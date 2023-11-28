@@ -45,6 +45,34 @@ export const ButtonCard = styled.button`
     font-weight: 600;
     border: none;
     padding: 0 25px;
+    cursor: pointer;
 `;
+
+export const SectionFlexRow = styled.div`
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    margin: 20px 5rem;
+    flex-wrap:wrap;
+    @media (max-width: 980px) {
+        justify-content: center;
+    }
+`
+
+export const Button = styled.button`
+    min-width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    background: #f5e131;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    padding: 0 15px;
+    transition: 0.3s;
+    cursor: pointer;
+    &:active{
+        background-color:#cbbb2d;
+    }
+`
 
 export default GlobalStyle;

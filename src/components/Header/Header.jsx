@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/logoHeader.png';
 import { HeaderContainer, ButtonsContainer, Button, HeaderLogo } from './Styles';
-import { goToLoginPage } from '../../routes/Coordinator';
+import { goToLoginPage, goToYourPlaylist } from '../../routes/Coordinator';
 import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 
@@ -10,9 +10,12 @@ export const Header = () => {
     const navigate = useNavigate();
 
     const login = () => {
-        localStorage.removeItem('token');
+        Cookies.remove('token')
         goToLoginPage(navigate);
     };
+    const goYourPlaylist = () => {
+        goToYourPlaylist(navigate)
+    }
     useEffect(() => {
         const token = Cookies.get('token');
         if(token){
@@ -30,7 +33,7 @@ export const Header = () => {
                     <>
                         <Button>Pagina Inicial</Button>
                         <Button>Músicas</Button>
-                        <Button>Suas Playlists</Button>
+                        <Button onClick={goYourPlaylist}>Suas Playlists</Button>
                     </>) ||
                     <>
                         <Button>Inscrever</Button>

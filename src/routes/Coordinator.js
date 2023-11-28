@@ -13,3 +13,7 @@ export const goToFeed = (navigate) => {
 export const goBack = (navigate) => {
   navigate(-1);
 };
+
+export const goToYourPlaylist = (navigate) => {
+    navigate('/user/playlists');
+}

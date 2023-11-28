@@ -4,6 +4,7 @@ import loginBackground from "../../assets/loginBackground.png";
 export const LoginContainer = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap:wrap;
 `
 
 export const ImageContainer = styled.div`
@@ -23,6 +24,8 @@ export const FlexOverflowContainer = styled.div`
     padding: 10px 5px;
     min-height: 350px;
     align-items: center;
+    justify-content: center;
+    flex-wrap:wrap;
     &::-webkit-scrollbar {
         height:5px
   }
@@ -40,10 +43,17 @@ export const Container = styled.div`
     flex-direction:column;
     justify-content:space-around;
     width:100%;
+    flex-wrap:wrap;
 `
 export const Title = styled.h1`
     font-size: 2rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+`
+
+export const YourPlaylistContainer = styled.div`
+    margin: 20px 5rem;
+    display:flex;
+    flex-wrap: wrap;
 `
