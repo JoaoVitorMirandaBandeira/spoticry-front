@@ -1,4 +1,4 @@
-import {Table,TableTh,TableTd,TableTr} from './Style'
+import { Table, TableTh, TableTd, TableTr } from './Style';
 
 export const TableSongs = props => {
     return (
@@ -9,11 +9,12 @@ export const TableSongs = props => {
             </tr>
             {props.songs?.map(e => {
                 return (
-                    <TableTr>
-                        <TableTd>{e.title}</TableTd>
-                        <TableTd>{e.title}</TableTd>
-                        <TableTd>{e.artist}</TableTd>
-                    </TableTr>
+                    <>
+                        <TableTr>
+                            <TableTd>{e.title}</TableTd>
+                            <TableTd>{e.artist}</TableTd>
+                        </TableTr>
+                    </>
                 );
             })}
         </Table>

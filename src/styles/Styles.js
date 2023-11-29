@@ -32,6 +32,10 @@ const GlobalStyle = createGlobalStyle`
         border-radius: 5px; /* Borda arredondada do thumb */
     }
   }
+
+  tr{
+    border-top: 1px solid #ffffff;
+  }
 `;
 
 export const ButtonCard = styled.button`
