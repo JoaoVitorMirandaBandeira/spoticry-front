@@ -1,6 +1,7 @@
 import { ContainerPlaylist, TitlePlaylist,TextPlaylist,SubTitlePlaylist,ContainerMusicPlaylist,MusicName} from "./Style"
 import useSong from "../../hooks/useSong"
 import { ButtonCard } from "../../styles/Styles";
+import { Link } from "react-router-dom";
 
 export const CardPlaylist = (props) => {
     const [songs,loading,erro] = useSong(props.songs);
@@ -17,7 +18,7 @@ export const CardPlaylist = (props) => {
                         })
                     }
                 </ContainerMusicPlaylist>
-                <ButtonCard>Ver Músicas</ButtonCard>
+                <ButtonCard><Link to={`/playlist/${props.id}`}>Ver Músicas</Link></ButtonCard>
             </ContainerPlaylist>
         </>
     )

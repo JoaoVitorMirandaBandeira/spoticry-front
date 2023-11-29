@@ -24,3 +24,12 @@ export const getPlaylistsFromUser = () => {
         }
     })
 }
+
+export const getPlaylistById = (id) => {
+    const token =  Cookies.get("token")
+    return axios.get(`${BASE_URL}playlist/${id}`,{
+        headers:{
+            Authorization: token
+        }
+    })
+}

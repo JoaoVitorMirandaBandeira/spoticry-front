@@ -24,8 +24,8 @@ export const FlexOverflowContainer = styled.div`
     padding: 10px 5px;
     min-height: 350px;
     align-items: center;
-    justify-content: center;
-    flex-wrap:wrap;
+    /*justify-content: center;*/
+    /*flex-wrap:wrap;*/
     &::-webkit-scrollbar {
         height:5px
   }
@@ -43,7 +43,7 @@ export const Container = styled.div`
     flex-direction:column;
     justify-content:space-around;
     width:100%;
-    flex-wrap:wrap;
+    /*flex-wrap:wrap;*/
 `
 export const Title = styled.h1`
     font-size: 2rem;

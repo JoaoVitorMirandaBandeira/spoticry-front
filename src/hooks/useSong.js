@@ -3,35 +3,39 @@ import { BASE_URL } from "../constants/urls";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 
-const useSong = (songsIds) => {
-    const token = Cookies.get("token");
+const useSong = (Ids) => {
+    const [songsIds, setSongsIds] = useState(Ids);
     const [songs, setSongs] = useState([]);
     const [erro, setErro] = useState(null);
     const [loading, setLoading] = useState(true);
     
+    const updateSongsIds = (newSongsIds) => {
+        setSongsIds(newSongsIds);
+    };
     useEffect(() => {
-        const songsPromise = songsIds.map(id => {
-            return axios.get(`${BASE_URL}song/${id}`,{
-                headers: {
-                    Authorization: token
-                }
-            })
-        });
+        fetchData();
+    },[songsIds])
+    const fetchData = async () => {
+        try {
+            const token = Cookies.get("token");
+            const songsPromise = songsIds.map(id => {
+                return axios.get(`${BASE_URL}song/${id}`,{
+                    headers: {
+                        Authorization: token
+                    }
+                })
+            });
+            const response = await axios.all(songsPromise)
+            const songsResponse = response.map( e => e.data.song);
+            setSongs(songsResponse);
+            setLoading(false);
+        } catch (error) {
+            setErro(error);
+            setLoading(false);
+        }
+    }
 
-        axios.all(songsPromise)
-            .then(axios.spread((...response) => {
-                const songsResponse = response.map( e => e.data.song);
-                setSongs(songsResponse);
-                setLoading(false);
-            }))
-            .catch(error => {
-                console.error(error);
-                setErro(error);
-                setLoading(false);
-            })
-
-    },[songsIds,token])
-    return [songs,loading,erro];
+    return [songs,loading,erro,updateSongsIds];
 }
 
 export default useSong

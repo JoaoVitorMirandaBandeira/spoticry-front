@@ -61,6 +61,7 @@ export function FeedPage() {
                                         name={playlist._name}
                                         description={playlist._description}
                                         songs={playlist._songs}
+                                        id={playlist._id}
                                     />
                                 ))}
                         </FlexOverflowContainer>
