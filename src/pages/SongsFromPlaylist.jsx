@@ -7,6 +7,7 @@ import { getPlaylistById } from "../services/playlist";
 import useSong from "../hooks/useSong";
 import { Loading } from '../components/Loading/Loading';
 import { TableSongs } from "../components/TableSongs/TableSongs";
+import {HeaderPage, ButtonAdd} from './Styles/Styles'
 
 const SongsFromPlaylist = () => {
     const {id} = useParams();
@@ -35,10 +36,13 @@ const SongsFromPlaylist = () => {
 
     return(
         <>
-           {(loading || loadingSongs) && <Loading />}
+           {loading&& <Loading />}
             <Header/>
-            {playlist?._name}
-            {id}
+            <HeaderPage>
+                <h2></h2>{playlist?._name}
+                <ButtonAdd>Adicionar musica</ButtonAdd>
+            </HeaderPage>
+            {!loadingSongs && <Loading/>}
             {(songs && <TableSongs songs={songs}/>) || erro}
             
             <Footer/>

@@ -16,6 +16,9 @@ export const Header = () => {
     const goYourPlaylist = () => {
         goToYourPlaylist(navigate)
     }
+    const goToFeed = () => {
+        navigate(`/feed`)
+    }
     useEffect(() => {
         const token = Cookies.get('token');
         if(token){
@@ -31,7 +34,7 @@ export const Header = () => {
             <ButtonsContainer>
                 {(authenticated &&
                     <>
-                        <Button>Pagina Inicial</Button>
+                        <Button onClick={goToFeed}>Pagina Inicial</Button>
                         <Button>Músicas</Button>
                         <Button onClick={goYourPlaylist}>Suas Playlists</Button>
                     </>) ||

@@ -3,8 +3,7 @@ import loginBackground from "../../assets/loginBackground.png";
 
 export const LoginContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap:wrap;
+  flex-direction: row;  
 `
 
 export const ImageContainer = styled.div`
@@ -56,4 +55,14 @@ export const YourPlaylistContainer = styled.div`
     margin: 20px 5rem;
     display:flex;
     flex-wrap: wrap;
+`
+export const HeaderPage = styled.div`
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+`
+
+export const ButtonAdd = styled.button`
+    height: 30px;
+    padding: 0px 15px;
 `

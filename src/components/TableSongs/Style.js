@@ -22,5 +22,9 @@ export const TableTd = styled.td`
 export const TableTr = styled.tr`
     border-top: 1px solid #ffffff;
     border-color: #ffffff;
-    display: table-row;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
 `;
+export const TableImg = styled.img`
+    width: 100px;
+`

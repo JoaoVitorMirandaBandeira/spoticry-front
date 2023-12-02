@@ -28,10 +28,10 @@ const useSong = (Ids) => {
             const response = await axios.all(songsPromise)
             const songsResponse = response.map( e => e.data.song);
             setSongs(songsResponse);
-            setLoading(false);
+            setLoading(true);
         } catch (error) {
             setErro(error);
-            setLoading(false);
+            setLoading(true);
         }
     }
 
